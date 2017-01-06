@@ -1,0 +1,23 @@
+.top-heroes {
+  width: 600px;
+  text-align: center;
+}
+
+.grid a {
+  display: inline-block;
+  padding: 50px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #607D8B;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.grid a:hover {
+  color: #607D8B;
+  background-color: #eee;
+}
+
+

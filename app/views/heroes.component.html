@@ -1,0 +1,23 @@
+<h2>My Heroes</h2>
+<div>
+  <label for="name">hero name:</label>
+  <input type="text" id="name" #heroName/>
+  <button type="button" (click)="add(heroName.value);heroName.value=''">Add</button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+      (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span>
+    <span>{{hero.name}}</span>
+    <button (click)="delete(hero);$event.stopPropagation();">x</button>
+    <!--除了调用组件的delete方法之外，这个delete按钮的点击处理器还应该阻止点击事件
+    向上冒泡 — 我们并不希望触发<li>的事件处理器，否则它会选中我们要删除的这位英雄。-->
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} is my hero.</h2>
+  <button type="button" (click)="goToDetail()">View Details</button>
+</div>
